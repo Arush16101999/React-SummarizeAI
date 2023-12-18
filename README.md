@@ -1,5 +1,5 @@
-# Article Summarizer App with ReactJs, ReduxToolkit and Rapid API
-
+# Article Summarizer App with ReactVite, ReduxToolkit, Tailwind CSS and Rapid API
+Run npm i & npm run dev
 ## Features
 
 1. Store the Searched URLs in local storage and Display the list of URLs
