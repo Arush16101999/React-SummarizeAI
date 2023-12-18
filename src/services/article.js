@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const rapidApiKey = import.meta.env.VITE_RAPID_API_KEY;
+const rapidApiKey = import.meta.env.VITE_RAPID_API_ARTICLE_KEY;
 
 export const articleApi = createApi({
   reducerPath: "articleApi",
@@ -17,7 +17,10 @@ export const articleApi = createApi({
   }),
   endpoints: (builder) => ({
     getSummary: builder.query({
-      query: (url) => `article?url=${url}`,
+      query: (params) =>
+        `/summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`,
     }),
   }),
 });
+// once the button entered, the query will be executed
+export const { useLazyGetSummaryQuery } = articleApi;
