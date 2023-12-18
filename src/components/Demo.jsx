@@ -11,18 +11,22 @@ const Demo = () => {
 
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
+  // Storing into local storage
   useEffect(() => {
     const articlesFromLocalStorage = JSON.parse(
       localStorage.getItem("articles")
     );
     if (articlesFromLocalStorage) {
+      // debugger;
       setAllArticles(articlesFromLocalStorage);
     }
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // debugger;
     const { data } = await getSummary({ articleUrl: article.url });
+
     if (data?.summary) {
       const newArticle = { ...article, summary: data.summary };
       const updateAllArticles = [newArticle, ...allArticles];
@@ -103,7 +107,7 @@ const Demo = () => {
           <img src={loader} alt="loader" className="w-20 h-20 object-contain" />
         ) : error ? (
           <p className="text-red-500 font-medium">
-            That wasnt correct
+            The URL you entered is invalid or the article is not supported yet.
             <br />
             <span className="font-satoshi fontt-normal text-gray-700">
               {error?.data?.error}
@@ -111,8 +115,8 @@ const Demo = () => {
           </p>
         ) : (
           article.summary && (
-            <div className="flex flex-col gap-3">
-              <h2 className="font-satoshi font-bold text-gray-600 text-xl">
+            <div className="flex flex-col justify-center items-center gap-3 ">
+              <h2 className="font-satoshi font-bold text-gray-600 text-xl justify-center">
                 Article <span className="blue_gradient">Summary</span>
               </h2>
               <div className="summary_box">

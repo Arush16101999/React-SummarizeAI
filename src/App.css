@@ -18,6 +18,11 @@
 
 .main:before {
   background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  /* background: radial-gradient(
+    circle at 10% 20%,
+    rgb(250, 250, 249) 0%,
+    rgba(255, 229, 172, 0.44) 90%
+  ); */
   position: absolute;
   content: "";
   z-index: 2;
@@ -76,7 +81,7 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
+  @apply rounded-full border border-orange-700 bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 py-1.5 px-5 text-sm text-white transition-all hover:bg-orange-300 hover:text-black;
 }
 
 .head_text {
