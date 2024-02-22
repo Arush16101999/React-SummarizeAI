@@ -4,7 +4,7 @@ Run npm i & npm run dev
 
 1. Store the Searched URLs in local storage and Display the list of URLs
 2. User can Easily copy the URL with copy URL feature.
-3. ReduxToolkit used for the API Configuration.
+3. Redux(RTK) used for the API Configuration.
 
 ## Deployed Link of React Summarize AI
 https://summarize-articels-arushan.netlify.app/
